@@ -2,5 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/ghzplugi/public_html/
-    - /bin/cp -R index.html $DEPLOYPATH
-    - /bin/cp -R *.png $DEPLOYPATH
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp aso.png $DEPLOYPATH
+    - /bin/cp donestok.png $DEPLOYPATH
+    - /bin/cp excel.png $DEPLOYPATH
+    - /bin/cp studioflow.png $DEPLOYPATH
