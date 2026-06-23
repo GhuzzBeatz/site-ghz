@@ -1,288 +1,545 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
+<head><meta charset="utf-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18185164683"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18185164683');
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GHZ Plugin - Softwares Profissionais</title>
+<title>GHZ Plugin — Softwares Profissionais para Empresas e Clínicas</title>
+<meta name="description" content="Sistemas profissionais para clínicas, salões, comércios e empresas. MedCore, FolhaPro, StudioFlow, ZapBot e mais. Pagamento único, sem mensalidade.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ghzplugin.com.br/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ghzplugin.com.br/">
+<meta property="og:title" content="GHZ Plugin — Softwares Profissionais">
+<meta property="og:description" content="Sistemas para clínicas, salões, comércios e empresas. Pagamento único, sem mensalidade.">
+<meta property="og:image" content="https://ghzplugin.com.br/images/medcore.png">
+
 <style>
-body{
-  margin:0;
-  font-family:Arial, Helvetica, sans-serif;
-  background:#0b0b0b;
-  color:#fff;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+:root {
+    --bg-primary: #0a0d14;
+    --bg-secondary: #111622;
+    --bg-card: #151b2a;
+    --bg-elevated: #1a2235;
+    --navy: #1b2847;
+    --yellow: #c9a227;
+    --yellow-light: #e2b83b;
+    --text-primary: #f4f5f7;
+    --text-secondary: #b6bcc8;
+    --text-muted: #7d8596;
+    --border: rgba(255,255,255,0.06);
+    --border-strong: rgba(255,255,255,0.1);
+    --whats: #25d366;
+    --green: #22c55e;
+    --radius-md: 18px;
+    --radius-lg: 24px;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+.header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,13,20,0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+.logo { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; color: var(--text-primary); text-decoration: none; }
+.logo-mark {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: linear-gradient(135deg, var(--yellow), #8a6f1a);
+    display: flex; align-items: center; justify-content: center;
+    color: #0a0d14; font-weight: 800; font-size: 14px;
+}
+.logo-text span { color: var(--yellow); }
+.nav-links { display: flex; gap: 24px; align-items: center; }
+.nav-links a {
+    color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text-primary); }
+.btn-whats-nav {
+    padding: 10px 18px; font-size: 13px; font-weight: 700;
+    background: var(--whats); color: #fff; border-radius: 10px;
+    text-decoration: none; transition: all 0.2s;
+}
+.btn-whats-nav:hover { background: #1fb858; transform: translateY(-1px); }
+
+.hero {
+    padding: 120px 0 80px;
+    background: linear-gradient(135deg, #0f1220 0%, #1b2847 100%);
+    position: relative; overflow: hidden; text-align: center;
+}
+.hero::before {
+    content: ""; position: absolute; top: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,162,39,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+}
+.hero::after {
+    content: ""; position: absolute; bottom: -300px; left: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(79,142,247,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 16px; background: rgba(201,162,39,0.15);
+    border: 1px solid rgba(201,162,39,0.35);
+    color: var(--yellow-light); font-size: 13px; font-weight: 600;
+    border-radius: 20px; margin-bottom: 24px;
+}
+.hero h1 {
+    font-size: 52px; font-weight: 800; letter-spacing: -1.5px;
+    line-height: 1.1; margin-bottom: 20px;
+}
+.hero h1 span { color: var(--yellow); }
+.hero p {
+    font-size: 18px; color: var(--text-secondary);
+    max-width: 640px; margin: 0 auto 36px;
+}
+.hero-stats {
+    display: flex; justify-content: center; gap: 40px;
+    margin-top: 48px; flex-wrap: wrap;
+}
+.hero-stat-num {
+    font-size: 36px; font-weight: 900; color: var(--yellow); line-height: 1;
+}
+.hero-stat-label {
+    font-size: 12px; color: var(--text-muted); text-transform: uppercase;
+    letter-spacing: 0.5px; margin-top: 6px;
 }
 
-header{
-  text-align:center;
-  padding:60px 20px;
-  background:#111;
+.cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 8px; padding: 16px 28px; font-size: 15px; font-weight: 700;
+    text-decoration: none; border-radius: 14px; border: none; cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-primary { background: var(--yellow); color: #0a0d14; }
+.btn-primary:hover { background: var(--yellow-light); transform: translateY(-2px); }
+.btn-whats { background: var(--whats); color: #fff; }
+.btn-whats:hover { background: #1fb858; transform: translateY(-2px); }
+.btn-large { padding: 18px 36px; font-size: 16px; }
+
+section { padding: 80px 0; }
+.section-label {
+    display: inline-block; font-size: 13px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--yellow); margin-bottom: 16px;
+}
+.section-title {
+    font-size: 36px; font-weight: 700; letter-spacing: -0.5px;
+    margin-bottom: 16px;
+}
+.section-subtitle {
+    font-size: 17px; color: var(--text-secondary);
+    margin-bottom: 48px; max-width: 640px;
 }
 
-header h1{
-  font-size:36px;
-  margin:0 0 10px 0;
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
 }
-
-header p{
-  color:#aaa;
-  font-size:18px;
-  margin:0;
+.product-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all 0.25s;
+    position: relative;
 }
-
-.container{
-  max-width:1280px;
-  margin:auto;
-  padding:40px 20px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:26px;
+.product-card:hover { border-color: rgba(201,162,39,0.3); transform: translateY(-4px); }
+.product-img {
+    width: 100%; height: 200px; object-fit: cover;
+    border-bottom: 1px solid var(--border);
 }
-
-.card{
-  background:#1a1a1a;
-  border-radius:12px;
-  overflow:hidden;
-  transition:0.25s;
-  box-shadow:0 0 10px rgba(0,0,0,0.5);
-  border:1px solid rgba(255,255,255,0.06);
+.product-card-body { padding: 24px; }
+.product-card-body h3 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+.product-tag {
+    display: inline-block; font-size: 10px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    padding: 4px 10px; border-radius: 6px; margin-bottom: 12px;
 }
-
-.card:hover{
-  transform:translateY(-4px);
+.tag-saude { background: rgba(79,142,247,0.15); color: #4f8ef7; }
+.tag-negocios { background: rgba(34,197,94,0.15); color: var(--green); }
+.tag-whatsapp { background: rgba(37,211,102,0.15); color: var(--whats); }
+.tag-utilidades { background: rgba(201,162,39,0.15); color: var(--yellow); }
+.product-card-body p {
+    font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+    margin-bottom: 18px; min-height: 66px;
 }
-
-.card img{
-  width:100%;
-  display:block;
+.product-price {
+    font-size: 13px; color: var(--text-muted); margin-bottom: 16px;
 }
-
-.card-banner{
-  width:100%;
-  min-height:160px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:20px;
-  font-size:28px;
-  font-weight:900;
-  letter-spacing:1px;
+.product-price strong {
+    font-size: 22px; color: var(--yellow); font-weight: 900;
 }
-
-.medcore{
-  background:linear-gradient(135deg,#0f172a,#1d4ed8);
+.product-links { display: flex; gap: 8px; }
+.product-links a {
+    flex: 1; padding: 12px; text-align: center;
+    font-size: 13px; font-weight: 700; border-radius: 10px;
+    text-decoration: none; transition: all 0.2s;
 }
-
-.folhapro{
-  background:linear-gradient(135deg,#111827,#7c3aed);
+.link-details {
+    background: rgba(201,162,39,0.12); color: var(--yellow);
+    border: 1px solid rgba(201,162,39,0.3);
 }
-
-.card-content{
-  padding:20px;
+.link-details:hover { background: var(--yellow); color: #0a0d14; }
+.link-whats {
+    background: rgba(37,211,102,0.12); color: var(--whats);
+    border: 1px solid rgba(37,211,102,0.3);
 }
+.link-whats:hover { background: var(--whats); color: #fff; }
 
-.card-content h2{
-  margin:0 0 6px 0;
-  font-size:22px;
+.benefits-section {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
-
-.tipo{
-  display:inline-block;
-  font-size:11px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  padding:5px 8px;
-  border-radius:6px;
-  margin-bottom:12px;
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
-
-.tipo.offline{
-  background:rgba(239,68,68,0.16);
-  color:#fda4af;
+.benefit-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 28px;
+    text-align: center;
+    transition: all 0.2s;
 }
+.benefit-card:hover { border-color: rgba(201,162,39,0.3); transform: translateY(-2px); }
+.benefit-icon { font-size: 36px; margin-bottom: 16px; }
+.benefit-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+.benefit-card p { font-size: 14px; color: var(--text-secondary); }
 
-.tipo.online{
-  background:rgba(34,197,94,0.16);
-  color:#86efac;
+.final-cta {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #1b2847 0%, #0f1220 100%);
+    text-align: center;
 }
+.final-cta h2 { font-size: 40px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; }
+.final-cta p { font-size: 17px; color: var(--text-secondary); margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-.card-content p{
-  color:#bbb;
-  font-size:15px;
-  line-height:1.45;
-  margin:0;
-}
+footer { background: #060811; padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 13px; }
+footer a { color: var(--yellow); text-decoration: none; }
 
-.btn{
-  display:inline-block;
-  margin-top:12px;
-  padding:12px 16px;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-.mercado{
-  background:#00a650;
-  color:#fff;
-}
-
-.whatsapp{
-  background:#25D366;
-  color:#fff;
-  margin-left:10px;
-}
-
-.contact{
-  background:#111;
-  text-align:center;
-  padding:40px 20px;
-  margin-top:40px;
-}
-
-.contact h2{
-  margin:0 0 10px 0;
-}
-
-.contact p{
-  margin:6px 0;
-}
-
-footer{
-  text-align:center;
-  padding:20px;
-  color:#888;
+@media (max-width: 900px) {
+    .hero h1 { font-size: 32px; }
+    .section-title { font-size: 26px; }
+    .final-cta h2 { font-size: 26px; }
+    .products-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .hero-stats { gap: 24px; }
 }
 </style>
 </head>
 <body>
 
-<header>
-  <h1>GHZ Plugin</h1>
-  <p>Softwares profissionais para empresas, clinicas e comercios</p>
+<header class="header">
+    <div class="container">
+        <div class="header-inner">
+            <a href="/" class="logo">
+                <div class="logo-mark">GHZ</div>
+                <span class="logo-text">GHZ <span>Plugin</span></span>
+            </a>
+            <nav class="nav-links">
+                <a href="#produtos">Produtos</a>
+                <a href="#vantagens">Vantagens</a>
+                <a href="https://wa.me/5511948981459" target="_blank" class="btn-whats-nav">💬 WhatsApp</a>
+            </nav>
+        </div>
+    </div>
 </header>
 
-<div class="container">
-
-  <div class="card">
-    <div class="card-banner medcore">MedCore</div>
-    <div class="card-content">
-      <h2>MedCore Offline</h2>
-      <span class="tipo offline">Offline</span>
-      <p>
-        Sistema medico local para clinicas e medicina ocupacional.
-        Funciona no computador sem depender de internet e gera PDFs no proprio PC.
-      </p>
-      <a class="btn mercado" href="https://lista.mercadolivre.com.br/_CustId_661009057" target="_blank">Ver no Mercado Livre</a>
-      <a class="btn whatsapp" href="https://wa.me/5511948981459?text=Quero%20comprar%20o%20MedCore%20Offline" target="_blank">Falar no WhatsApp</a>
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span style="width:6px;height:6px;background:#c9a227;border-radius:50%"></span>
+                Softwares profissionais para o seu negócio
+            </div>
+            <h1>Sistemas que <span>simplificam</span><br>a gestão da sua empresa</h1>
+            <p>Softwares para clínicas, salões, comércios e empresas. Pagamento único, sem mensalidade, com suporte direto via WhatsApp.</p>
+            <div class="cta-buttons">
+                <a href="#produtos" class="btn btn-primary btn-large">🛒 Ver Produtos</a>
+                <a href="https://wa.me/5511948981459?text=Ol%C3%A1%20Gustavo%2C%20gostaria%20de%20conhecer%20os%20softwares%20da%20GHZ%20Plugin" class="btn btn-whats btn-large" target="_blank">💬 Falar no WhatsApp</a>
+            </div>
+            <div class="hero-stats">
+                <div><div class="hero-stat-num">500+</div><div class="hero-stat-label">Clientes Ativos</div></div>
+                <div><div class="hero-stat-num">5.0</div><div class="hero-stat-label">Avaliação Média</div></div>
+                <div><div class="hero-stat-num">15+</div><div class="hero-stat-label">Softwares</div></div>
+                <div><div class="hero-stat-num">0%</div><div class="hero-stat-label">Mensalidade</div></div>
+            </div>
+        </div>
     </div>
-  </div>
+</section>
 
-  <div class="card">
-    <div class="card-banner medcore">MedCore Online</div>
-    <div class="card-content">
-      <h2>MedCore Online</h2>
-      <span class="tipo online">Online</span>
-      <p>
-        Versao com banco online para multiusuarios na clinica.
-        Permite acesso simultaneo em varios computadores com dados sincronizados.
-      </p>
-      <a class="btn mercado" href="https://lista.mercadolivre.com.br/_CustId_661009057" target="_blank">Ver no Mercado Livre</a>
-      <a class="btn whatsapp" href="https://wa.me/5511948981459?text=Quero%20comprar%20o%20MedCore%20Online" target="_blank">Falar no WhatsApp</a>
+<!-- PRODUTOS -->
+<section id="produtos">
+    <div class="container">
+        <span class="section-label">🛒 Nossos Produtos</span>
+        <h2 class="section-title">Encontre o sistema ideal para o seu negócio</h2>
+        <p class="section-subtitle">Todos os softwares com pagamento único, suporte humanizado e garantia de 7 dias.</p>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <img src="images/medcore.png" alt="MedCore" class="product-img">
+                <div class="product-card-body">
+                    <h3>MedCore</h3>
+                    <span class="product-tag tag-saude">Saúde</span>
+                    <p>Sistema completo para clínicas e medicina ocupacional. Prontuário, agenda, ASO, PCMSO, receituário e financeiro. Alternativa ao SOC.</p>
+                    <div class="product-price">A partir de <strong>R$ 79</strong></div>
+                    <div class="product-links">
+                        <a href="produto/medcore.html" class="link-details">Ver Detalhes</a>
+                        <a href="https://wa.me/5511948981459?text=Quero%20saber%20mais%20sobre%20o%20MedCore" target="_blank" class="link-whats">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/folhapro.png" alt="FolhaPro" class="product-img">
+                <div class="product-card-body">
+                    <h3>FolhaPro</h3>
+                    <span class="product-tag tag-negocios">Negócios</span>
+                    <p>Sistema de folha de pagamento para CLT e PJ. Controle de lançamentos, holerites, férias, 13º e emissão de documentos trabalhistas.</p>
+                    <div class="product-price">A partir de <strong>R$ 79</strong></div>
+                    <div class="product-links">
+                        <a href="produto/folhapro.html" class="link-details">Ver Detalhes</a>
+                        <a href="https://wa.me/5511948981459?text=Quero%20saber%20mais%20sobre%20o%20FolhaPro" target="_blank" class="link-whats">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/studioflow.png" alt="StudioFlow" class="product-img">
+                <div class="product-card-body">
+                    <h3>StudioFlow</h3>
+                    <span class="product-tag tag-negocios">Negócios</span>
+                    <p>Sistema para salões, barbearias e estúdios. Agenda de clientes, serviços, controle de faturamento e gestão completa do negócio.</p>
+                    <div class="product-price">A partir de <strong>R$ 49</strong></div>
+                    <div class="product-links">
+                        <a href="produto/studioflow.html" class="link-details">Ver Detalhes</a>
+                        <a href="https://wa.me/5511948981459?text=Quero%20saber%20mais%20sobre%20o%20StudioFlow" target="_blank" class="link-whats">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/zapbot.png" alt="ZapBot" class="product-img">
+                <div class="product-card-body">
+                    <h3>ZapBot</h3>
+                    <span class="product-tag tag-whatsapp">WhatsApp</span>
+                    <p>Robô de atendimento automático para WhatsApp. Respostas inteligentes, menu interativo e atendimento 24h para seu negócio.</p>
+                    <div class="product-price">A partir de <strong>R$ 59</strong></div>
+                    <div class="product-links">
+                        <a href="produto/zapbot.html" class="link-details">Ver Detalhes</a>
+                        <a href="https://wa.me/5511948981459?text=Quero%20saber%20mais%20sobre%20o%20ZapBot" target="_blank" class="link-whats">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/zapdisparo.png" alt="ZapDisparo" class="product-img">
+                <div class="product-card-body">
+                    <h3>ZapDisparo</h3>
+                    <span class="product-tag tag-whatsapp">WhatsApp</span>
+                    <p>Disparo em massa para WhatsApp. Envie mensagens, imagens e documentos para listas de contatos de forma rápida e organizada.</p>
+                    <div class="product-price">A partir de <strong>R$ 49</strong></div>
+                    <div class="product-links">
+                        <a href="produto/zapdisparo.html" class="link-details">Ver Detalhes</a>
+                        <a href="https://wa.me/5511948981459?text=Quero%20saber%20mais%20sobre%20o%20ZapDisparo" target="_blank" class="link-whats">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/donestok.png" alt="DonEstok" class="product-img">
+                <div class="product-card-body">
+                    <h3>DonEstok</h3>
+                    <span class="product-tag tag-negocios">Negócios</span>
+                    <p>Controle de estoque profissional para MEIs, lojistas e comerciantes. Produtos, entradas, saídas e relatórios em um sistema simples.</p>
+                    <div class="product-price">A partir de <strong>R$ 39</strong></div>
+                    <div class="product-links">
+                        <a href="https://lista.mercadolivre.com.br/_CustId_661009057" target="_blank" class="link-details">Comprar</a>
+                        <a href="https://wa.me/5511948981459?text=Quero%20saber%20mais%20sobre%20o%20DonEstok" target="_blank" class="link-whats">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/saso.png" alt="ASO Fácil" class="product-img">
+                <div class="product-card-body">
+                    <h3>ASO Fácil</h3>
+                    <span class="product-tag tag-saude">Saúde</span>
+                    <p>Emissor de Atestado de Saúde Ocupacional (ASO) para clínicas de medicina do trabalho. 100% offline, gera PDF profissional.</p>
+                    <div class="product-price">A partir de <strong>R$ 39</strong></div>
+                    <div class="product-links">
+                        <a href="https://lista.mercadolivre.com.br/_CustId_661009057" target="_blank" class="link-details">Comprar</a>
+                        <a href="https://wa.me/5511948981459?text=Quero%20saber%20mais%20sobre%20o%20ASO%20Facil" target="_blank" class="link-whats">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/pontopro.png" alt="PontoPro" class="product-img">
+                <div class="product-card-body">
+                    <h3>PontoPro</h3>
+                    <span class="product-tag tag-negocios">Negócios</span>
+                    <p>Controle de ponto eletrônico para funcionários. Registro de entrada/saída, horas extras, banco de horas e relatórios.</p>
+                    <div class="product-price">A partir de <strong>R$ 39</strong></div>
+                    <div class="product-links">
+                        <a href="https://lista.mercadolivre.com.br/_CustId_661009057" target="_blank" class="link-details">Comprar</a>
+                        <a href="https://wa.me/5511948981459?text=Quero%20saber%20mais%20sobre%20o%20PontoPro" target="_blank" class="link-whats">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/cleanboost.png" alt="CleanBoost" class="product-img">
+                <div class="product-card-body">
+                    <h3>CleanBoost</h3>
+                    <span class="product-tag tag-utilidades">Utilidades</span>
+                    <p>Otimizador de PC para Windows. Limpa arquivos temporários, acelera inicialização e melhora o desempenho do computador.</p>
+                    <div class="product-price">A partir de <strong>R$ 29</strong></div>
+                    <div class="product-links">
+                        <a href="https://lista.mercadolivre.com.br/_CustId_661009057" target="_blank" class="link-details">Comprar</a>
+                        <a href="https://wa.me/5511948981459?text=Quero%20saber%20mais%20sobre%20o%20CleanBoost" target="_blank" class="link-whats">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/recoverx.png" alt="RecoverX" class="product-img">
+                <div class="product-card-body">
+                    <h3>RecoverX</h3>
+                    <span class="product-tag tag-utilidades">Utilidades</span>
+                    <p>Recuperação de arquivos deletados. Recupere fotos, documentos e vídeos apagados do HD, SSD, pen drive e cartão SD.</p>
+                    <div class="product-price">A partir de <strong>R$ 29</strong></div>
+                    <div class="product-links">
+                        <a href="https://lista.mercadolivre.com.br/_CustId_661009057" target="_blank" class="link-details">Comprar</a>
+                        <a href="https://wa.me/5511948981459?text=Quero%20saber%20mais%20sobre%20o%20RecoverX" target="_blank" class="link-whats">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/irpro.png" alt="IRPro" class="product-img">
+                <div class="product-card-body">
+                    <h3>IRPro</h3>
+                    <span class="product-tag tag-utilidades">Utilidades</span>
+                    <p>Assistente para declaração de Imposto de Renda. Organiza documentos, calcula deduções e prepara sua declaração.</p>
+                    <div class="product-price">A partir de <strong>R$ 29</strong></div>
+                    <div class="product-links">
+                        <a href="https://lista.mercadolivre.com.br/_CustId_661009057" target="_blank" class="link-details">Comprar</a>
+                        <a href="https://wa.me/5511948981459?text=Quero%20saber%20mais%20sobre%20o%20IRPro" target="_blank" class="link-whats">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="images/mesaup.png" alt="MesaUp" class="product-img">
+                <div class="product-card-body">
+                    <h3>MesaUp</h3>
+                    <span class="product-tag tag-negocios">Negócios</span>
+                    <p>Sistema para restaurantes e lanchonetes. Cardápio digital, controle de mesas, pedidos e gestão completa do estabelecimento.</p>
+                    <div class="product-price">A partir de <strong>R$ 49</strong></div>
+                    <div class="product-links">
+                        <a href="https://lista.mercadolivre.com.br/_CustId_661009057" target="_blank" class="link-details">Comprar</a>
+                        <a href="https://wa.me/5511948981459?text=Quero%20saber%20mais%20sobre%20o%20MesaUp" target="_blank" class="link-whats">💬 WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-  </div>
+</section>
 
-  <div class="card">
-    <div class="card-banner folhapro">FolhaPro</div>
-    <div class="card-content">
-      <h2>FolhaPro Offline</h2>
-      <span class="tipo offline">Offline</span>
-      <p>
-        Sistema de folha de pagamento para CLT e PJ em modo local.
-        Controle completo de lancamentos e emissao de documentos no computador.
-      </p>
-      <a class="btn mercado" href="https://lista.mercadolivre.com.br/_CustId_661009057" target="_blank">Ver no Mercado Livre</a>
-      <a class="btn whatsapp" href="https://wa.me/5511948981459?text=Quero%20comprar%20o%20FolhaPro%20Offline" target="_blank">Falar no WhatsApp</a>
+<!-- VANTAGENS -->
+<section id="vantagens" class="benefits-section">
+    <div class="container">
+        <div style="text-align:center;margin-bottom:48px">
+            <span class="section-label">✨ Por que escolher a GHZ Plugin?</span>
+            <h2 class="section-title">Vantagens que fazem a diferença</h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Pagamento Único</h3>
+                <p>Pague uma vez, use para sempre. Sem mensalidade, sem anuidade, sem surpresas.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💬</div>
+                <h3>Suporte Humano</h3>
+                <p>Atendimento direto via WhatsApp com o desenvolvedor. Sem robô, sem fila.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🔒</div>
+                <h3>Seguro e Confiável</h3>
+                <p>Seus dados ficam no seu computador ou na nuvem segura. Conforme LGPD.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🔄</div>
+                <h3>Atualizações Grátis</h3>
+                <p>Novas funcionalidades e melhorias sem custo adicional. Comprou, sempre atualizado.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">✅</div>
+                <h3>Garantia 7 Dias</h3>
+                <p>Não gostou? Devolvemos 100% do seu dinheiro. Sem perguntas.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">⚡</div>
+                <h3>Entrega Imediata</h3>
+                <p>Após o pagamento, receba o instalador e a chave em até 1 hora.</p>
+            </div>
+        </div>
     </div>
-  </div>
+</section>
 
-  <div class="card">
-    <div class="card-banner folhapro">FolhaPro Online</div>
-    <div class="card-content">
-      <h2>FolhaPro Online</h2>
-      <span class="tipo online">Online</span>
-      <p>
-        Versao com sincronizacao online para uso em equipe.
-        Varios usuarios podem trabalhar ao mesmo tempo com dados compartilhados.
-      </p>
-      <a class="btn mercado" href="https://lista.mercadolivre.com.br/_CustId_661009057" target="_blank">Ver no Mercado Livre</a>
-      <a class="btn whatsapp" href="https://wa.me/5511948981459?text=Quero%20comprar%20o%20FolhaPro%20Online" target="_blank">Falar no WhatsApp</a>
+<!-- CTA FINAL -->
+<section class="final-cta">
+    <div class="container">
+        <h2>Pronto para modernizar seu negócio?</h2>
+        <p>Centenas de empresas já simplificaram sua gestão com nossos softwares. Junte-se a elas agora!</p>
+        <div class="cta-buttons" style="justify-content:center">
+            <a href="#produtos" class="btn btn-primary btn-large">🛒 Ver Produtos</a>
+            <a href="https://wa.me/5511948981459?text=Ol%C3%A1%20Gustavo%2C%20gostaria%20de%20conhecer%20os%20softwares%20da%20GHZ%20Plugin" class="btn btn-whats btn-large" target="_blank">💬 Falar no WhatsApp</a>
+        </div>
     </div>
-  </div>
-
-  <div class="card">
-    <img src="donestok.png" alt="DonEstok">
-    <div class="card-content">
-      <h2>DonEstok - Controle de Estoque</h2>
-      <p>
-        Sistema profissional para controle de estoque ideal para MEIs, lojistas e comerciantes.
-        Controle produtos, entradas, saidas e relatorios em um sistema simples e rapido.
-      </p>
-      <a class="btn mercado" href="https://www.mercadolivre.com.br/sistema-de-controle-de-estoque-para-pc--donestok/up/MLBU3831187490?pdp_filters=seller_id%3A661009057" target="_blank">Comprar no Mercado Livre</a>
-      <a class="btn whatsapp" href="https://wa.me/5511948981459" target="_blank">Falar no WhatsApp</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="studioflow.png" alt="StudioFlow">
-    <div class="card-content">
-      <h2>StudioFlow</h2>
-      <p>
-        Sistema completo para saloes, barbearias e estudios.
-        Controle agenda de clientes, servicos realizados e acompanhe o faturamento do seu negocio.
-      </p>
-      <a class="btn mercado" href="https://www.mercadolivre.com.br/sistema-para-spa-e-estetica-agenda-clientes/up/MLBU3835140870?pdp_filters=seller_id%3A661009057" target="_blank">Comprar no Mercado Livre</a>
-      <a class="btn whatsapp" href="https://wa.me/5511948981459" target="_blank">Falar no WhatsApp</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="aso.png" alt="ASO">
-    <div class="card-content">
-      <h2>ASO Offline</h2>
-      <p>
-        Software profissional para emissao de Atestado de Saude Ocupacional (ASO) para clinicas.
-        Funciona totalmente offline e gera documentos em PDF.
-      </p>
-      <a class="btn mercado" href="https://www.mercadolivre.com.br/software-emissor-de-aso-offline--medicina-do-trabalho/up/MLBU3809633741?pdp_filters=seller_id%3A661009057" target="_blank">Comprar no Mercado Livre</a>
-      <a class="btn whatsapp" href="https://wa.me/5511948981459" target="_blank">Falar no WhatsApp</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <img src="excel.png" alt="Planilhas Excel">
-    <div class="card-content">
-      <h2>20 Mil Planilhas Excel</h2>
-      <p>
-        Pacote com mais de 20.000 planilhas profissionais para gestao financeira, estoque, RH,
-        vendas e controle de negocios. Compativel com Excel 2024.
-      </p>
-      <a class="btn mercado" href="https://www.mercadolivre.com.br/20-mil-planilhas-editaveis-microsoft-excel-2024-digital/up/MLBU1732823497?pdp_filters=seller_id%3A661009057" target="_blank">Comprar no Mercado Livre</a>
-      <a class="btn whatsapp" href="https://wa.me/5511948981459" target="_blank">Falar no WhatsApp</a>
-    </div>
-  </div>
-
-</div>
-
-<div class="contact">
-  <h2>Contato</h2>
-  <p>WhatsApp: 11 94898-1459</p>
-  <p>Email: ghzplugin@gmail.com</p>
-</div>
+</section>
 
 <footer>
-  GHZ Plugin &copy; 2026
+    <div class="container">
+        <p>
+            <strong style="color:var(--text-primary)">GHZ Plugin</strong> — Desenvolvimento de softwares profissionais<br>
+            📧 <a href="mailto:ghzplugin@gmail.com">ghzplugin@gmail.com</a> &nbsp;|&nbsp;
+            📱 <a href="https://wa.me/5511948981459">(11) 94898-1459</a>
+        </p>
+        <p style="margin-top:12px">© 2026 GHZ Plugin. Todos os direitos reservados.</p>
+    </div>
 </footer>
 
 </body>
